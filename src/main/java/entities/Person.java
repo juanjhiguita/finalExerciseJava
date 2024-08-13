@@ -9,19 +9,19 @@ public abstract class Person {
         this.id = id;
     }
 
-    public String getName() {
+    protected String getName() {
         return this.name;
     }
 
-    public void setName(String name) {
+    protected void setName(String name) {
         this.name = name;
     }
 
-    public int getId() {
+    protected int getId() {
         return this.id;
     }
 
-    public void setId(int id) {
+    protected void setId(int id) {
         this.id = id;
     }
 

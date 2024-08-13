@@ -1,18 +1,22 @@
 package main.java.entities.teacher;
 
 public class TeacherPartTime extends Teacher{
-    long workingHours;
+    private double workingHours;
 
-    public TeacherPartTime(String name, int id, double salary, long workingHours) {
-        super(name, id, salary);
+    public TeacherPartTime(String name, int id, double baseSalary, double workingHours) {
+        super(name, id, baseSalary);
         this.workingHours = workingHours;
     }
 
-    public long getWorkingHours() {
+    private double getWorkingHours() {
         return workingHours;
     }
 
-    public void setWorkingHours(long workingHours) {
+    private double calculateSalary(){
+        return (this.baseSalary * this.workingHours);
+    }
+
+    private void setWorkingHours(long workingHours) {
         this.workingHours = workingHours;
     }
 

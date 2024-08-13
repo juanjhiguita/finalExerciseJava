@@ -9,12 +9,16 @@ public class TeacherFullTime extends Teacher{
         this.experience = experience;
     }
 
-    public double getExperience() {
-        return experience;
+    private double getExperience() {
+        return this.experience;
     }
 
-    public void setExperience(double experience) {
+    private void setExperience(double experience) {
         this.experience = experience;
+    }
+
+    private double calculateSalary(){
+        return (this.baseSalary * ((this.experience*110)/100));
     }
 
     @Override
