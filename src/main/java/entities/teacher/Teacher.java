@@ -5,7 +5,7 @@ import main.java.entities.Person;
 public class Teacher extends Person {
     double salary;
 
-    public Teacher(String name, int id, double salary, long experience) {
+    public Teacher(String name, int id, double salary) {
         super(name, id);
         this.salary = salary;
     }

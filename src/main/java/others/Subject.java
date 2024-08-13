@@ -6,20 +6,20 @@ import main.java.entities.teacher.Teacher;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class {
+public class Subject {
     private String name;
     private int classRoom;
     private Teacher teacher;
     private List<Student> studentList;
 
-    public Class(String name, int classRoom, Teacher teacher) {
+    public Subject(String name, int classRoom, Teacher teacher) {
         this.name = name;
         this.classRoom = classRoom;
         this.teacher = teacher;
         this.studentList = new ArrayList<>();
     }
 
-    public Class(String name, int classRoom, Teacher teacher, List<Student> students) {
+    public Subject(String name, int classRoom, Teacher teacher, List<Student> students) {
         this.name = name;
         this.classRoom = classRoom;
         this.studentList = students;
