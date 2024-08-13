@@ -16,5 +16,9 @@ public class Student extends Person {
         this.age = age;
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + ", age: " + this.age;
+    }
 
 }

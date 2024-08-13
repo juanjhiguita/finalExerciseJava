@@ -24,4 +24,9 @@ public abstract class Person {
     public void setId(int id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "The name is: " + this.name + ", id: " + this.id;
+    }
 }
