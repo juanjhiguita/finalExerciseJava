@@ -3,18 +3,23 @@ package main.java.entities.teacher;
 import main.java.entities.Person;
 
 public class Teacher extends Person {
-    double salary;
+    protected double baseSalary;
 
-    public Teacher(String name, int id, double salary) {
+    public Teacher(String name, int id, double baseSalary) {
         super(name, id);
-        this.salary = salary;
+        this.baseSalary = baseSalary;
     }
 
-    public double getSalary() {
-        return salary;
+    protected double getBaseSalary() {
+        return baseSalary;
     }
 
-    public void setSalary(double salary) {
-        this.salary = salary;
+    protected void setBaseSalary(double baseSalary) {
+        this.baseSalary = baseSalary;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", salary: " + this.baseSalary;
     }
 }
