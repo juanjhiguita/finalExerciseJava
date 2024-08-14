@@ -23,6 +23,7 @@ public class Subject {
         this.name = name;
         this.classRoom = classRoom;
         this.studentList = students;
+        this.teacher = teacher;
     }
 
     public String getName() {
@@ -71,6 +72,6 @@ public class Subject {
 
     @Override
     public String toString() {
-        return "Name class: " + this.name + " classroom: " + this.classRoom + ", Students" + studentList.toString();
+        return "The subject name is: " + this.name + " in the classroom: " + this.classRoom + " with the teacher: [" + this.teacher.toString() + "], and the Students" + studentList.toString();
     }
 }

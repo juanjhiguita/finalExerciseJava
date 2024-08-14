@@ -19,15 +19,25 @@ public class University {
         teachers.add(teacher);
     }
 
-    public static void addStudents(Student student){
+    public static void addStudent(Student student){
         students.add(student);
     }
 
-    public static void addStudentToAClass(Subject subjectToAsign, Student student){
-        if(subjects.contains(subjectToAsign)){
-            int index = subjects.indexOf(subjectToAsign);
+    public static void addStudentToAClass(Subject subject, Student student){
+        if(subjects.contains(subject)){
+            int index = subjects.indexOf(subject);
             subjects.get(index).addStudent(student);
         }
+    }
+
+    public static Subject getSubjectBySubjectNameAndClassroom(String subjectName, int classroom){
+        Subject subjectFinded = null;
+        for (Subject subject : subjects) {
+            if (subject.getClassRoom() == classroom && subject.getName().equals(subjectName)) {
+                subjectFinded = subject;
+            }
+        }
+        return subjectFinded;
     }
 
 
