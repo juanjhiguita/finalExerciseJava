@@ -67,11 +67,10 @@ public class Main {
                 System.out.println("Enter the subject name");
                 String subjectNameToSearch = subjectNameToSearchScan.next();
 
+                // Enter the classroom number
                 System.out.println("Enter the classroom number");
                 scan = new Scanner(System.in);
                 int classroomNumberToSearch = scan.nextInt();
-
-                // Enter the subject
 
                 // The student is created
                 Student student = new Student(nameNewStudent,idNewStudent,ageNewStudent);
@@ -80,14 +79,40 @@ public class Main {
                 // The student is added in the university
                 University.addStudent(student);
                 // The student is added in a exist subject
-                subjectToAddStudent.addStudent(student);
+                University.addStudentToAClass(subjectToAddStudent, student);
+                // The subject later to added is printed
                 System.out.println(subjectToAddStudent);
                 break;
             case 4:
+                // Enter the new subject name
+                System.out.println("Enter the new subject name");
+                scan = new Scanner(System.in);
+                String nameNewSubject = scan.next();
+
+                // Enter the new subject classroom
+                System.out.println("Enter the new subject classroom");
+                scan = new Scanner(System.in);
+                int classroomNewSubject = scan.nextInt();
+
+                // Enter the new subject classroom
+                System.out.println("Enter the teacher id");
+                scan = new Scanner(System.in);
+                int idTeacherNewSubject = scan.nextInt();
+
+                // Get teacher by id
+                Teacher teacherNewSubject = University.getTeacherById(idTeacherNewSubject);
+
                 // Create a new subject and add a exist teacher , exist students and your data
+                Subject subjectToAdd = new Subject(nameNewSubject, classroomNewSubject,teacherNewSubject);
+
+                // The new subject is added in the university subjects list
+                University.addSubject(subjectToAdd);
+
+                System.out.println(University.subjects.toString());
                 break;
             case 5:
                 // List all the subjects in that a student is (search by id)
+                System.out.println(University.getSubjectListByStudentId(45423142).toString());
                 break;
             default:
 
@@ -168,10 +193,10 @@ public class Main {
         Subject subject4 = new Subject("computing", 4, teacher4, group1);
 
         // Add the Subjects in the University
-        University.addClass(subject1);
-        University.addClass(subject2);
-        University.addClass(subject3);
-        University.addClass(subject4);
+        University.addSubject(subject1);
+        University.addSubject(subject2);
+        University.addSubject(subject3);
+        University.addSubject(subject4);
 
         //Print the list of subjects in the University
         System.out.println(University.subjects.toString());

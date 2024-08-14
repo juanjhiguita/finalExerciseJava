@@ -11,7 +11,7 @@ public class University {
     public static List<Subject> subjects = new ArrayList<>();
     public static List<Teacher> teachers = new ArrayList<>();
 
-    public static void addClass(Subject subjectToAdd){
+    public static void addSubject(Subject subjectToAdd){
         subjects.add(subjectToAdd);
     }
 
@@ -40,6 +40,24 @@ public class University {
         return subjectFinded;
     }
 
+    public static Teacher getTeacherById(int idTeacher){
+        Teacher teacherFinded = null;
+        for (Teacher teacher : teachers) {
+            if (teacher.getId() == idTeacher) {
+                teacherFinded = teacher;
+            }
+        }
+        return teacherFinded;
+    }
 
+    public static List<Subject> getSubjectListByStudentId(int idStudent){
+        List<Subject> subjectsByStudentId = new ArrayList<>();
+        for (Subject subject : subjects) {
+            if(subject.isASubjectStudent(idStudent)){
+                subjectsByStudentId.add(subject);
+            }
+        }
+        return subjectsByStudentId;
+    }
 
 }

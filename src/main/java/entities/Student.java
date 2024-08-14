@@ -8,6 +8,22 @@ public class Student extends Person {
         this.age = age;
     }
 
+    public String getName(){
+        return super.name;
+    }
+
+    public void setName(String name){
+        super.name = name;
+    }
+
+    public int getId(){
+        return super.id;
+    }
+
+    public void setId(int id){
+        super.id = id;
+    }
+
     private int getAge() {
         return this.age;
     }

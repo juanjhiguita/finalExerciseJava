@@ -26,6 +26,15 @@ public class Subject {
         this.teacher = teacher;
     }
 
+    public boolean isASubjectStudent(int idStudent){
+        for (Student student : this.studentList) {
+            if (student.getId() == idStudent) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public String getName() {
         return this.name;
     }
