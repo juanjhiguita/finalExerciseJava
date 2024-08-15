@@ -8,12 +8,13 @@ public class TeacherPartTime extends Teacher{
         this.workingHours = workingHours;
     }
 
-    private double getWorkingHours() {
-        return workingHours;
+    @Override
+    public  void calculateSalary(){
+        super.setSalary(this.baseSalary * this.workingHours);
     }
 
-    private double calculateSalary(){
-        return (this.baseSalary * this.workingHours);
+    private double getWorkingHours() {
+        return workingHours;
     }
 
     private void setWorkingHours(long workingHours) {

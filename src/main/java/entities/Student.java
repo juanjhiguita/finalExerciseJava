@@ -34,7 +34,7 @@ public class Student extends Person {
 
     @Override
     public String toString() {
-        return super.toString() + ", age: " + this.age;
+        return "The student name is: " + this.name + ", with id: " + this.id + " and age: " + this.age;
     }
 
 }

@@ -5,7 +5,7 @@ import main.java.entities.teacher.Teacher;
 
 import java.util.List;
 
-public abstract class Formatter {
+public class Formatter {
 
     public static boolean verifySubjectNameExist(List<Subject> subjects, String subjectName){
         for (Subject subject : subjects) {
@@ -57,6 +57,8 @@ public abstract class Formatter {
     public static boolean verifyNameMaxSize(String name){
         return name.length() < 40;
     }
+
+
 
     public static boolean verifyClassroomMaxSize(int classroom){
         String idStr = Integer.toString(classroom);

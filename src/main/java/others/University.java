@@ -60,4 +60,29 @@ public class University{
         return subjectsByStudentId;
     }
 
+    public static String generateStringStudents(){
+        String text = "Students: \n";
+        for (Student student : students) {
+            text = text.concat(student.toString() + "\n");
+            System.out.println(student.toString());
+        }
+        return text;
+    }
+
+    public static String generateStringTeachers(){
+        String text = "Teachers: \n";
+        for (Teacher teacher : teachers) {
+            text = text.concat(teacher.toString() + "\n");
+        }
+        return text;
+    }
+
+    public static String generateStringSubjects(){
+        String text = "Subjects: \n";
+        for (Subject subject : subjects) {
+            text = text.concat(subject.toString() + "\n");
+        }
+        return text;
+    }
+
 }

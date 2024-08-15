@@ -36,11 +36,11 @@ public class Main {
                         break;
                     case 1:
                         // Print all the teachers with your information
-                        System.out.println(University.teachers.toString());
+                        System.out.println(University.generateStringTeachers());
                         break;
                     case 2:
                         // Print all the subjects
-                        System.out.println(University.subjects.toString());
+                        System.out.println(University.generateStringSubjects());
                         // Later print a submenu:
                         Scanner subjectNameScan = new Scanner(System.in);
                         System.out.println("Enter the subject name");
@@ -53,6 +53,7 @@ public class Main {
                             if(result){
                                 // To select a class in order to print the subject information
                                 Subject subject = University.getSubjectBySubjectNameAndClassroom(subjectName , classroomNumber);
+                                System.out.println("The specific information about the select subject");
                                 System.out.println(subject);
                             }else {
                                 System.out.println("The Subject (name: " + subjectName + ", classroom: " + classroomNumber + ") don't exist");
@@ -119,6 +120,8 @@ public class Main {
                                 // The student is added in exist subject
                                 University.addStudentToAClass(subjectToAddStudent, student);
                                 // The subject later to added is printed
+                                System.out.println(student);
+                                System.out.println("Was added to the next Subject: ");
                                 System.out.println(subjectToAddStudent);
                                 break;
                             }else{
@@ -165,13 +168,14 @@ public class Main {
 
                             // Creation of a random group of students
                             List<Student> randomStudentGroup = createRandomListWithStudents(University.students, 3);
-
+                            System.out.println("The list of students was generate randomly");
                             // Create a new subject and add exist teacher , exist students and your data
                             Subject subjectToAdd = new Subject(nameNewSubject, classroomNewSubject,teacherNewSubject, randomStudentGroup);
 
                             // The new subject is added in the university subjects list
                             University.addSubject(subjectToAdd);
-                            System.out.println("The list of students was generate randomly");
+
+                            System.out.println("The new subject was added succesfull: ");
                             System.out.println(University.subjects.toString());
                             break;
                         }else{
@@ -191,6 +195,7 @@ public class Main {
                             }
 
                             // List all the subjects in that a student is (search by id)
+                            System.out.println("List to all the subjects in where is the student by id: " + studentId);
                             System.out.println(University.getSubjectListByStudentId(studentId).toString());
                         }catch (Exception NumberFormatException){
                             System.out.println("Enter a number (integer)");
@@ -222,15 +227,15 @@ public class Main {
         List<Student> group1 = new ArrayList<>();
         List<Student> group2 = new ArrayList<>();
         List<Student> group3 = new ArrayList<>();
-        List<Student> group4 = new ArrayList<>();
 
         //Data Student
-        Student student1 = new Student("JUAN",1001250294,22);
-        Student student2 = new Student("MARIA",45423142,20);
-        Student student3 = new Student("CARLOS",102312304,19);
-        Student student4 = new Student("ENRIQUE",122345343,24);
-        Student student5 = new Student("SAMUEL",1001990294,28);
-        Student student6 = new Student("ANDREA",1001450394,21);
+        Student student6 = new Student("ANDREA",1234,21);
+        Student student1 = new Student("JUAN",12345,22);
+        Student student2 = new Student("MARIA",123456,20);
+        Student student3 = new Student("CARLOS",1234567,19);
+        Student student4 = new Student("ENRIQUE",12345678,24);
+        Student student5 = new Student("SAMUEL",123456789,28);
+
 
         // adding the students in the university
         University.addStudent(student1);
@@ -259,10 +264,15 @@ public class Main {
         System.out.println(University.students.toString());
 
         // Data teachers, 2 full time y dos part time
-        Teacher teacher1 = new TeacherPartTime("profe1", 1001250294,2500000, 80 );
-        Teacher teacher2 = new TeacherFullTime("profe2", 45786432,3000000, 4 );
-        Teacher teacher3 = new TeacherFullTime("profe3", 42445454,2300000, 2 );
-        Teacher teacher4 = new TeacherPartTime("profe4", 1001450134,1600000, 80 );
+        Teacher teacher1 = new TeacherPartTime("ANA", 9876,2500000, 60 );
+        Teacher teacher2 = new TeacherFullTime("CAMILA", 98765,3000000, 4 );
+        Teacher teacher3 = new TeacherFullTime("SEBASTIAN", 987654,2300000, 2 );
+        Teacher teacher4 = new TeacherPartTime("PABLO", 9876543,1600000, 80 );
+
+        teacher1.calculateSalary();
+        teacher2.calculateSalary();
+        teacher3.calculateSalary();
+        teacher4.calculateSalary();
 
         // Adding teachers in the University
         University.addTeacher(teacher1);
@@ -276,7 +286,7 @@ public class Main {
         // Create the subjects
         Subject subject1 = new Subject("biology", 1, teacher1, group1);
         Subject subject2 = new Subject("chemistry", 2, teacher2, group2);
-        Subject subject3 = new Subject("mechanical physics", 3, teacher3, group3);
+        Subject subject3 = new Subject("logic", 3, teacher3, group3);
         Subject subject4 = new Subject("computing", 4, teacher4, group1);
 
         // Add the Subjects in the University
@@ -310,4 +320,5 @@ public class Main {
 
         return randomList;
     }
+
 }

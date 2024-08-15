@@ -17,5 +17,14 @@ public class TeacherFullTime extends Teacher{
         this.experience = experience;
     }
 
+    @Override
+    public  void calculateSalary(){
+        super.setSalary((this.baseSalary * 110)/100);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", experience: " + this.experience + " years";
+    }
 
 }

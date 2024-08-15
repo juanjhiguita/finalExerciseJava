@@ -2,8 +2,9 @@ package main.java.entities.teacher;
 
 import main.java.entities.Person;
 
-public class Teacher extends Person {
+public abstract class Teacher extends Person {
     protected double baseSalary;
+    private double salary;
 
     public Teacher(String name, int id, double baseSalary) {
         super(name, id);
@@ -22,7 +23,7 @@ public class Teacher extends Person {
         return super.id;
     }
 
-    public void setId(int id){
+    protected void setId(int id){
         super.id = id;
     }
 
@@ -34,8 +35,18 @@ public class Teacher extends Person {
         this.baseSalary = baseSalary;
     }
 
+    protected double getSalary() {
+        return salary;
+    }
+
+    protected void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public void calculateSalary(){};
+
     @Override
     public String toString() {
-        return "The teacher name is: " + this.name + ", with id: " + this.id + ", baseSalary: " + this.baseSalary;
+        return "The teacher name is: " + this.name + ", with id: " + this.id + " and baseSalary: " + this.baseSalary;
     }
 }
