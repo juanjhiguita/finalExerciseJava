@@ -6,7 +6,7 @@ import main.java.entities.teacher.Teacher;
 import java.util.ArrayList;
 import java.util.List;
 
-public class University {
+public class University{
     public static List<Student> students = new ArrayList<>();
     public static List<Subject> subjects = new ArrayList<>();
     public static List<Teacher> teachers = new ArrayList<>();
