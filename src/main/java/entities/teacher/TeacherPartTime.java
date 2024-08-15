@@ -1,9 +1,9 @@
 package main.java.entities.teacher;
 
 public class TeacherPartTime extends Teacher{
-    private double workingHours;
+    private float workingHours;
 
-    public TeacherPartTime(String name, int id, double baseSalary, double workingHours) {
+    public TeacherPartTime(String name, int id, double baseSalary, float workingHours) {
         super(name, id, baseSalary);
         this.workingHours = workingHours;
     }
@@ -13,11 +13,11 @@ public class TeacherPartTime extends Teacher{
         super.setSalary(this.baseSalary * this.workingHours);
     }
 
-    private double getWorkingHours() {
+    private float getWorkingHours() {
         return workingHours;
     }
 
-    private void setWorkingHours(long workingHours) {
+    private void setWorkingHours(float workingHours) {
         this.workingHours = workingHours;
     }
 

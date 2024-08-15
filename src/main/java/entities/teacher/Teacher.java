@@ -4,7 +4,7 @@ import main.java.entities.Person;
 
 public abstract class Teacher extends Person {
     protected double baseSalary;
-    private double salary;
+    protected double salary;
 
     public Teacher(String name, int id, double baseSalary) {
         super(name, id);
@@ -23,7 +23,7 @@ public abstract class Teacher extends Person {
         return super.id;
     }
 
-    protected void setId(int id){
+    public void setId(int id){
         super.id = id;
     }
 

@@ -12,13 +12,6 @@ public class Subject {
     private Teacher teacher;
     private List<Student> studentList;
 
-    public Subject(String name, int classRoom, Teacher teacher) {
-        this.name = name;
-        this.classRoom = classRoom;
-        this.teacher = teacher;
-        this.studentList = new ArrayList<>();
-    }
-
     public Subject(String name, int classRoom, Teacher teacher, List<Student> students) {
         this.name = name;
         this.classRoom = classRoom;
@@ -26,7 +19,7 @@ public class Subject {
         this.teacher = teacher;
     }
 
-    public boolean isASubjectStudent(int idStudent){
+    public boolean isStudentInASubject(int idStudent){
         for (Student student : this.studentList) {
             if (student.getId() == idStudent) {
                 return true;

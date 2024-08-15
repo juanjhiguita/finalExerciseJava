@@ -1,24 +1,23 @@
 package main.java.entities.teacher;
 
 public class TeacherFullTime extends Teacher{
-    private double experience;
-
+    private float experience;
 
     public TeacherFullTime(String name, int id, double salary, long experience) {
         super(name, id, salary);
         this.experience = experience;
     }
 
-    private double getExperience() {
+    private float getExperience() {
         return this.experience;
     }
 
-    private void setExperience(double experience) {
+    private void setExperience(float experience) {
         this.experience = experience;
     }
 
     @Override
-    public  void calculateSalary(){
+    public void calculateSalary(){
         super.setSalary((this.baseSalary * 110)/100);
     }
 

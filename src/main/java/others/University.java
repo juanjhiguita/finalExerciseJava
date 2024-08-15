@@ -53,7 +53,7 @@ public class University{
     public static List<Subject> getSubjectListByStudentId(int idStudent){
         List<Subject> subjectsByStudentId = new ArrayList<>();
         for (Subject subject : subjects) {
-            if(subject.isASubjectStudent(idStudent)){
+            if(subject.isStudentInASubject(idStudent)){
                 subjectsByStudentId.add(subject);
             }
         }
